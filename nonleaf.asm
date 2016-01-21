@@ -1,6 +1,6 @@
 .data											#define variable that will be stored in Static memory location
 
-prompt: .asciiz "Enter number\n"							#string
+prompt: .asciiz "Enter number\n"								#string
 result: .asciiz "Result: \n"								#string
 comma: .asciiz ", "									#string
 
@@ -43,7 +43,7 @@ loop:											#for (a1 = 1, a1 < t0, a1++)
 	la $a0, comma									#passing string
 	syscall										#execute
 
-	addi $a1, $a1, 1								#a1++
+	addi $a1, $a1, 1									#a1++
 
 	j loop										#return to top of loop
 
