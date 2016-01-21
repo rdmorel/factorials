@@ -57,11 +57,11 @@ factorial:									#beginning of factorial function
 	sw $a1, 0($sp)								#saving argument to stack
 	sw $ra, 4($sp)								#saving input to stack
 
-	slti $t0, $a1, 1							#if n < 1 this is not base case
+	slti $t0, $a1, 1								#if n < 1 this is not base case
 	beq $t0, $zero, recur							#so jump to recursive step
 
 	li $v1, 1								#base case = 1
-	addi $sp, $sp, 8							#adjust stack
+	addi $sp, $sp, 8								#adjust stack
 	jr $ra									#return
 
 recur:										#recur until hitting base case
@@ -71,7 +71,7 @@ recur:										#recur until hitting base case
 
 	lw $a1, 0($sp)								#just returned from jal, getting back saved argument
 	lw $ra, 4($sp)								#getting back return address
-	addi $sp, $sp, 8							#adjusting stack
+	addi $sp, $sp, 8								#adjusting stack
 
 	mul $v1, $v1, $a1							#v1 = a1 * v1, where v1 is the value we just got from the last iteration of factorial
 	jr $ra									#return with final value saved in v1
